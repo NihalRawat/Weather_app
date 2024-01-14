@@ -1,6 +1,7 @@
 *{
     margin: 0;padding: 0;
     font-size: 30px;
+    font-family: sans-serif,'Times New Roman', Times, serif;
 }
 body{
     background-color: rgb(116, 111, 111);
@@ -8,12 +9,19 @@ body{
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    overflow:hidden;
+    overflow: hidden;
+}
+.error{
+    /* padding-left: -40px; */
+    font-weight: 600;
+    color: red;
+    display: none;
 }
 .outer{
-    text-align:center;
+    text-align: center;
+    padding-top: 10px;
     position: absolute;
-    top: 20%;
+    top: 18%;
     left: 30%;
     border: 2px solid black;
     border-radius: 20px;
