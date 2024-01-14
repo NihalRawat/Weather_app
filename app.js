@@ -5,14 +5,20 @@ const btn=document.querySelector(".img");
 
 async function checkweather(city){
     const response=await fetch(apiurl+city+`&appid=${key}`);
+    if(response.status==404){
+        document.querySelector(".error").style.display="block";
+        document.querySelector(".imgdiv").style.display="none";
+    }
+    else{
     let data=await response.json();
-    console.log(data);
+    // console.log(data);
     document.querySelector(".city").innerHTML=data.name;
     document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+" °C";
     document.querySelector(".wi").innerHTML=data.wind.speed+"km/hr";
     document.querySelector(".hui").innerHTML=data.main.humidity;
     document.querySelector(".imgdiv").style.display="block";
-
+    document.querySelector(".error").style.display="none";
+    }
 }
 btn.addEventListener("click",()=>{
     checkweather(search.value);
